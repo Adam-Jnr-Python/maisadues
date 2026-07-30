@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Students</title>
+    <link rel="stylesheet" href="./css/dashboard.css" />
+    <link rel="stylesheet" href="./css/students.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <h2>MaISA</h2>
+        <ul>
+          <li onclick="window.location.href = 'dashboard.html'">Dashboard</li>
+          <li onclick="window.location.href = 'set-dues.html'">Set Dues</li>
+          <li class="active" onclick="window.location.href = 'students.html'">
+            Students
+          </li>
+          <li id="logoutBtn">Logout</li>
+        </ul>
+      </div>
+
+      <div class="main">
+        <!-- HEADER -->
+        <div class="header">
+          <h2>Students</h2>
+          <button id="addStudentBtn" class="btn-primary">+ Add Student</button>
+        </div>
+
+        <!-- Students Table -->
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>ID</th>
+              <th>Department</th>
+              <th>Level</th>
+              <th>Course</th>
+              <th>Total Dues</th>
+              <th>Amount Paid</th>
+              <th>Balance</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="studentsTable">
+            <tr>
+              <td colspan="9" id="loading">Loading...</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- ADD STUDENT MODAL -->
+        <div id="studentModal" class="modal">
+          <div class="modal-content">
+            <h3>Add Student & Record Payment</h3>
+            <input type="text" id="studentName" placeholder="Full Name *" />
+            <input type="text" id="studentId" placeholder="Student ID *" />
+            <input type="text" id="department" placeholder="Department *" />
+            <input type="text" id="level" placeholder="Level *" />
+            <input type="text" id="course" placeholder="Course" />
+            <input type="number" id="amount" placeholder="Amount Paying *" />
+            <div class="modal-actions">
+              <button id="saveStudent" class="btn-primary">Save</button>
+              <button id="closeModal" class="btn-secondary">Cancel</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIEW STUDENT MODAL -->
+        <div id="viewModal" class="modal">
+          <div class="modal-content">
+            <h3>Student Details</h3>
+            <div class="view-section">
+              <p><strong>Name:</strong> <span id="viewName">-</span></p>
+              <p><strong>Student ID:</strong> <span id="viewId">-</span></p>
+              <p><strong>Department:</strong> <span id="viewDept">-</span></p>
+              <p><strong>Level:</strong> <span id="viewLevel">-</span></p>
+              <p><strong>Course:</strong> <span id="viewCourse">-</span></p>
+              <p>
+                <strong>Total Dues:</strong> GH¢<span id="viewTotalDues"
+                  >0</span
+                >
+              </p>
+              <p>
+                <strong>Amount Paid:</strong> GH¢<span id="viewAmountPaid"
+                  >0</span
+                >
+              </p>
+              <p>
+                <strong>Balance:</strong> GH¢<span id="viewBalance">0</span>
+              </p>
+              <p>
+                <strong>Total Payments:</strong>
+                <span id="viewPaymentCount">0</span>
+              </p>
+            </div>
+            <div class="view-section">
+              <h4>Payment History</h4>
+              <div id="viewPayments">
+                <p id="notRecordedPayments">No payments recorded</p>
+              </div>
+            </div>
+            <div class="modal-actions">
+              <button id="closeViewModal" class="btn-secondary">Close</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- DELETE CONFIRMATION MODAL -->
+        <div id="deleteModal" class="modal">
+          <div class="modal-content">
+            <h3>Confirm Delete</h3>
+            <p>Are you sure you want to delete this student?</p>
+            <div class="modal-actions">
+              <button id="confirmDelete" class="btn-danger">Delete</button>
+              <button id="cancelDelete" class="btn-secondary">Cancel</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- EDIT PAYMENT MODAL -->
+        <div id="editPaymentModal" class="modal">
+          <div class="modal-content">
+            <h3>Edit Payment</h3>
+            <label for="editPaymentStudentId">Edit Payment Student ID</label>
+            <input type="text" id="editPaymentStudentId" disabled />
+            <label for="editPaymentAmount">Edit Payment Amount</label>
+            <input type="number" id="editPaymentAmount" placeholder="Amount" />
+            <label for="editPaymentDate">Edit Payment Date</label>
+            <input type="date" id="editPaymentDate" />
+            <div class="modal-actions">
+              <button id="saveEditPayment" class="btn-primary">Save</button>
+              <button id="closeEditPaymentModal" class="btn-secondary">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- DELETE PAYMENT MODAL -->
+        <div id="deletePaymentModal" class="modal">
+          <div class="modal-content">
+            <h3>Confirm Delete Payment</h3>
+            <p>Are you sure you want to delete this payment?</p>
+            <div class="modal-actions">
+              <button id="confirmDeletePayment" class="btn-danger">
+                Delete
+              </button>
+              <button id="cancelDeletePayment" class="btn-secondary">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/students.js"></script>
+  </body>
+</html>
