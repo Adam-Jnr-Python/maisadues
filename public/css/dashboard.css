@@ -20,12 +20,26 @@
   flex-direction: column;
 }
 
-.sidebar h2 {
-  margin-bottom: 30px;
+.sidebar .sidebar-head {
+  margin-bottom: 10px;
   color: #f1f5f9;
 }
 
+.sidebar-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.maisa-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
 .sidebar ul {
+  margin-top: 5px;
   list-style: none;
   flex: 1;
 }

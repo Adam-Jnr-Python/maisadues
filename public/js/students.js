@@ -1,4 +1,4 @@
-const API_BASE = "https://maisadues.onrender.com";
+const API_BASE = "https://maisa-dues.onrender.com";
 
 //  AUTH HELPERS
 function getAuthToken() {
@@ -111,10 +111,10 @@ async function loadStudents() {
         <td>${student.department}</td>
         <td>${student.level || "N/A"}</td>
         <td>${student.course || "N/A"}</td>
-        <td>₦${student.totalDues}</td>
-        <td>₦${student.amountPaid}</td>
+        <td>GH¢${student.totalDues}</td>
+        <td>GH¢${student.amountPaid}</td>
         <td style="color: ${student.balance > 0 ? "#e74c3c" : "#27ae60"}; font-weight: bold;">
-          ₦${student.balance}
+          GH¢${student.balance}
         </td>
         <td>
           <button onclick="viewStudent('${student.studentId}')" class="btn-view">View</button>
@@ -188,7 +188,7 @@ async function viewStudent(studentId) {
             .map(
               (p, index) => `
               <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f1f5f9;">
-                <span>#${index + 1} ₦${p.amount}</span>
+                <span>#${index + 1} GH¢${p.amount}</span>
                 <span style="color: #64748b;">${new Date(p.date).toLocaleDateString()}</span>
                 <span>
                   <button onclick="openEditPayment('${student.studentId}', ${index})" class="btn-view" style="font-size: 11px; padding: 2px 8px;">Edit</button>

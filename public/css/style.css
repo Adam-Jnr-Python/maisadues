@@ -20,6 +20,11 @@ body {
   padding: 20px;
 }
 
+.maisa-logo {
+  width: 250px;
+  border-radius: 125px;
+}
+
 h1 {
   font-size: 3rem;
   margin-bottom: 10px;

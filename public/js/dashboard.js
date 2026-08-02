@@ -1,4 +1,4 @@
-const API_BASE = "https://maisadues.onrender.com";
+const API_BASE = "https://maisa-dues.onrender.com";
 
 // AUTH HELPERS
 function getAuthToken() {
