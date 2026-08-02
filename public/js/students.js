@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:5000";
+const API_BASE = "https://maisadues.onrender.com";
 
 //  AUTH HELPERS
 function getAuthToken() {
